@@ -1,44 +1,121 @@
-// Smooth scrolling function
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+// Smooth scrolling for navigation links
+const links = document.querySelectorAll("nav a");
 
-        // Scroll smoothly to the section
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+links.forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault(); // Prevent the default anchor click behavior
+
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        // Scroll to the target element
+        targetElement.scrollIntoView({
+            behavior: "smooth", // Enable smooth scroll
+            block: "start" // Scroll to the top of the target element
         });
     });
 });
 
-// Function to toggle event details
-function toggleDetails(card) {
-    card.classList.toggle('rotated'); // Toggle rotation class
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const reservationModal = document.getElementById("reservationModal");
+    const closeButton = document.querySelector(".close-button");
+    const reservationButton = document.querySelector(".btn-reservation");
+    const reservationForm = document.getElementById("reservationForm");
 
-// Function to handle fade-in effect on scroll
-window.addEventListener('scroll', () => {
-    const fadeIns = document.querySelectorAll('.fade-in'); // Select all elements with the fade-in class
-    fadeIns.forEach(fadeIn => {
-        const { top } = fadeIn.getBoundingClientRect(); // Get position of the element
-        if (top < window.innerHeight) {
-            fadeIn.classList.add('visible'); // Add visible class if the element is in view
+    // Toggle hamburger menu and navigation links
+    hamburger.addEventListener("click", function() {
+        this.classList.toggle("active");
+        navLinks.classList.toggle("nav-active");
+    });
+
+    // Open the reservation modal
+    reservationButton.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default button action
+        reservationModal.style.display = "block"; // Show modal
+    });
+
+    // Close the reservation modal
+    closeButton.addEventListener("click", function() {
+        reservationModal.style.display = "none"; // Hide modal
+    });
+
+    // Close the modal when clicking outside of it
+    window.addEventListener("click", function(event) {
+        if (event.target === reservationModal) {
+            reservationModal.style.display = "none"; // Hide modal
+        }
+    });
+
+    // Handle form submission
+    reservationForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        const guests = document.getElementById("guests").value;
+        const specialRequest = document.getElementById("special-request").value;
+
+        const message = `Reservation Details:\nName: ${name}\nEmail: ${email}\nDate: ${date}\nTime: ${time}\nGuests: ${guests}\nSpecial Requests: ${specialRequest}`;
+        
+        // Open WhatsApp with the reservation details
+        const whatsappNumber = "+27762485764";
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, "_blank");
+
+        // Close the modal after submission
+        reservationModal.style.display = "none"; 
+        reservationForm.reset(); // Reset the form fields
+    });
+
+    // Close the navigation when clicking outside
+    document.addEventListener("click", function(e) {
+        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("nav-active");
         }
     });
 });
 
-// Function to shuffle gallery items
-function shuffleGallery() {
-    const galleryContainer = document.querySelector('.gallery-container');
-    const items = Array.from(galleryContainer.children);
+// Get the modals
+var foodModal = document.getElementById("food-modal");
+var beveragesModal = document.getElementById("beverages-modal");
 
-    // Shuffle the items
-    items.sort(() => Math.random() - 0.5);
+// Get the buttons that open the modals
+var foodImg = document.getElementById("food-img");
+var beveragesImg = document.getElementById("beverages-img");
 
-    // Append items in the new order
-    items.forEach(item => galleryContainer.appendChild(item));
+// Get the <span> elements that close the modals
+var closeFood = document.getElementById("close-food");
+var closeBeverages = document.getElementById("close-beverages");
+
+// When the user clicks on the food image, open the food modal
+foodImg.onclick = function() {
+    foodModal.style.display = "flex";
 }
 
-// Call shuffleGallery every 3 seconds
-setInterval(shuffleGallery, 3000); // Adjust time as needed
+// When the user clicks on the beverages image, open the beverages modal
+beveragesImg.onclick = function() {
+    beveragesModal.style.display = "flex";
+}
 
+// When the user clicks on <span> (x), close the modals
+closeFood.onclick = function() {
+    foodModal.style.display = "none";
+}
+closeBeverages.onclick = function() {
+    beveragesModal.style.display = "none";
+}
 
+// Close the modals if user clicks anywhere outside the modal content
+window.onclick = function(event) {
+    if (event.target == foodModal) {
+        foodModal.style.display = "none";
+    }
+    if (event.target == beveragesModal) {
+        beveragesModal.style.display = "none";
+    }
+}
