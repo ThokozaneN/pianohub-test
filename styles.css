@@ -81,7 +81,7 @@ body, html {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Hero Section */
+/*Hero Section*/
 .hero {
     position: relative;
     height: 100vh;
@@ -98,19 +98,18 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the video covers the full screen */
+    object-fit: cover;
     z-index: -1;
 }
 
-/* Video Overlay */
 .video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.63); /* Dark overlay with 50% opacity */
-    z-index: 0; /* Make sure it's below the text but above the video */
+    background-color: rgba(0, 0, 0, 0.63);
+    z-index: 0;
 }
 
 .hero-content {
@@ -121,7 +120,7 @@ body, html {
 }
 
 .hero-content h1 {
-    font-family: 'Playfair Display', serif; /* Elegant font for the heading */
+    font-family: 'Playfair Display', serif;
     font-size: 4rem;
     margin-bottom: 15px;
 }
@@ -130,10 +129,10 @@ body, html {
     font-size: 1.2rem;
     margin-bottom: 20px;
     opacity: 0;
-    animation: fadeIn 2s forwards 0.5s; /* Fading in animation */
+    animation: fadeIn 2s forwards 0.5s;
 }
 
-/* Animation for paragraph */
+/*Animation for paragraph*/
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -147,7 +146,7 @@ body, html {
 
 .hero-content .btn-reservation {
     padding: 12px 30px;
-    background-color: #daa520; /* Goldish color */
+    background-color: #daa520;
     color: white;
     border: none;
     border-radius: 5px;
@@ -157,13 +156,13 @@ body, html {
 }
 
 .hero-content .btn-reservation:hover {
-    background-color: #c99a3b; /* Darker gold for hover */
+    background-color: #c99a3b;
 }
 
-/* Responsive */
+/*Mobile Responsiveness*/
 @media (max-width: 768px) {
     .navbar {
-        justify-content: space-between; /* Change to space-between on mobile */
+        justify-content: space-between;
     }
 
     .nav-links {
@@ -207,26 +206,26 @@ body, html {
     }
 }
 
-/* Reservation Modal Styles */
+/*Reservation*/
 .reservation-modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
-    z-index: 1000; /* Sit on top */
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
-    background-color: rgba(0, 0, 0, 0.9); /* Transparent black */
-    margin: 15% auto; /* 15% from the top and centered */
+    background-color: rgba(0, 0, 0, 0.9);
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%; 
     max-width: 500px;
-    border-radius: 15px; /* Rounded corners */
+    border-radius: 15px;
 }
 
 .close-button {
@@ -238,12 +237,12 @@ body, html {
 
 .close-button:hover,
 .close-button:focus {
-    color: white; /* Change color on hover */
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }
 
-/* Form Styles */
+/*Form Styles*/
 form {
     display: flex;
     flex-direction: column;
@@ -251,7 +250,7 @@ form {
 
 label {
     margin: 10px 0 5px;
-    color: white; /* Label text color */
+    color: white;
 }
 
 input,
@@ -259,56 +258,56 @@ textarea {
     padding: 10px;
     margin-bottom: 10px;
     border: none;
-    border-radius: 20px; /* Oval shape */
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent white */
-    color: white; /* Text color */
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white; 
 }
 
 input:focus,
 textarea:focus {
-    outline: none; /* Remove default outline */
-    background-color: rgba(255, 255, 255, 0.2); /* Darker on focus */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 button {
     padding: 10px;
-    background-color: #00aaff; /* Button color */
+    background-color: #00aaff;
     color: white;
     border: none;
-    border-radius: 20px; /* Oval shape */
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #008bb5; /* Darker button color on hover */
+    background-color: #008bb5;
 }
 
-/* Mobile Responsiveness for Reservation Modal */
+/*Mobile Responsiveness*/
 @media (max-width: 600px) {
     .modal-content {
-        margin: 10% auto; /* Adjust margin for smaller screens */
-        padding: 15px; /* Less padding */
-        width: 90%; /* Full width on mobile */
+        margin: 10% auto;
+        padding: 15px;
+        width: 90%;
     }
 
     label {
-        font-size: 16px; /* Larger label font size for easier readability */
+        font-size: 16px;
     }
 
     input,
     textarea {
-        padding: 8px; /* Smaller padding */
-        font-size: 14px; /* Adjust font size for inputs */
+        padding: 8px;
+        font-size: 14px;
     }
 
     button {
-        padding: 8px; /* Smaller button padding */
-        font-size: 16px; /* Adjust button font size */
+        padding: 8px;
+        font-size: 16px;
     }
 }
 
-/* Menu Section */
+/*Menu Section*/
 .menu-section {
     text-align: center;
     margin: 50px 0;
@@ -322,21 +321,21 @@ button:hover {
 .menu-options {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allows items to wrap if screen is small */
-    gap: 100px; /* No gap between the items */
+    flex-wrap: wrap;
+    gap: 100px;
 }
 
 .menu-item {
     cursor: pointer;
     text-align: center;
-    margin: 0; /* No margin between the items */
+    margin: 0;
 }
 
 .menu-item img {
     border-radius: 20px;
-    width: 250px; /* Set fixed width for uniform size */
-    height: 250px; /* Set fixed height for uniform size */
-    object-fit: cover; /* Maintain aspect ratio and crop excess */
+    width: 250px;
+    height: 250px; 
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -344,22 +343,23 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Modal Styling */
+/*Modal Styling*/
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
     z-index: 10;
 }
 
-.modal-content {
-    background-color: white;
+.modal-content-menu {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.692);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -374,20 +374,20 @@ button:hover {
     cursor: pointer;
 }
 
-/* Media Queries for Mobile Compatibility */
+/*Media Queries*/
 @media (max-width: 768px) {
     .menu-options {
-        flex-direction: row; /* Both items will stay in a row */
-        gap: 10px; /* Small gap between items */
+        flex-direction: row;
+        gap: 10px;
     }
 
     .menu-item img {
-        width: 150px; /* Smaller width on mobile */
-        height: 150px; /* Smaller height on mobile */
+        width: 150px; 
+        height: 150px;
     }
 
-    .modal-content {
-        width: 90%; /* Full width on smaller screens */
+    .modal-content-menu {
+        width: 90%;
     }
 }
 
