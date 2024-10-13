@@ -371,14 +371,15 @@ button:hover {
     }
 
     .about-content {
-        padding-right: 40px;
+        padding-top: 50px;
+        padding-right: 50px;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
     .about img {
-        padding-left: 110px;
+        padding-left: 99px;
         max-width: 100%;
         margin-bottom: 20px;
     }
