@@ -22,8 +22,8 @@
             <ul class="nav-links">
                 <li><a href="#menu-section">Menu</a></li>
                 <li><a href="#">Reservations</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#events-section">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger" aria-label="Menu Toggle">
                 <span class="line"></span>
@@ -41,7 +41,7 @@
         </video>
         <div class="video-overlay"></div>
         <div class="hero-content">
-            <h1>Welcome to Piano Hub</h1>
+            <h1>Welcome to Pianohub Soweto</h1>
             <p>Immerse yourself in a luxurious experience of music and fine dining.</p>
             <a href="#" class="btn-reservation">Make a Reservation</a>
         </div>
@@ -82,9 +82,9 @@
             <img src="assets\SOWETO.png" alt="About-Pianohub-logo" class="about-image">
             <div class="about-text">
                 <h2>We Are!</h2>
-                <p>PIANOHUB SOWETO, a luxurious destination for entertainment enthusiasts. We offer an unparalleled experience
+                <p>PIANOHUB SOWETO, a luxurious destination for piano enthusiasts. We offer an unparalleled experience
                     blending music, fine dining, and elegance. Whether you're enjoying a performance or dining
-                    with friends, Pianohub Soweto brings music to life in an intimate, unforgettable setting. You already know that.</p>
+                    with friends, Pianohub Soweto brings music to life in an intimate, unforgettable setting.</p>
             </div>
         </div>
     </section>
@@ -132,9 +132,107 @@
         </div>
     </div>
 
+    <!--Events Section-->
+    <section id="events-section" class="events-section">
+        <h2>Upcoming Events</h2>
+    </section>
 
+    <section class="events-section2">
+        <div class="event-card">
+            <img src="gallery\Mondays Poster.jpg" alt="Event 1" class="event-img" />
+            <div class="event-info">
+                <span class="event-date">10 OCT</span>
+                <h3 class="event-title">Maglera Doe Boy & Blxckie</h3>
+                <button class="reserve-button">Reserve</button>
+            </div>
+        </div>
+        
+        <div class="event-card">
+            <img src="gallery\Monday Past Event.jpg" alt="Event 2" class="event-img" />
+            <div class="event-info">
+                <span class="event-date">11 OCT</span>
+                <h3 class="event-title">Mawhoo & Babalwa_m</h3>
+                <button class="reserve-button">Reserve</button>
+            </div>
+        </div>
 
+        <!-- Add more event cards as needed -->
+    </section>
 
+    <!-- Modal for Event Images -->
+    <div id="modal-event" class="modal-event">
+        <div class="modal-content-event">
+            <span class="close-event" id="close-event">&times;</span>
+            <img src="" alt="Event Image" id="modal-image">
+        </div>
+    </div>
+
+        <!-- Add more event cards as needed -->
+    </section>
+
+    <!-- Modal for Event Images -->
+    <div id="modal-event" class="modal-event">
+        <div class="modal-content-event">
+            <span class="close-event" id="close-event">&times;</span>
+            <img src="" alt="Event Image" id="modal-image">
+        </div>
+    </div>
+
+    <!--Carousel-->
+    <section id="clients" class="clients-section">
+        <h2>Supported By</h2>
+        <div class="client-logo-carousel">
+            <div class="client-carousel-wrapper">
+                <img src="gallery/channel O.png" alt="Client 1 Logo" class="carousel-logo">
+                <img src="gallery/Patron-Tequila-logo.png" alt="Client 2 Logo" class="carousel-logo">
+                <img src="gallery/Patron-Tequila-logo.png" alt="Client 3 Logo" class="carousel-logo">
+                <img src="gallery/logo-light.png" alt="Client 4 Logo" class="carousel-logo">
+                <img src="gallery/ThisGeekRepairs B.png" alt="Client 5 Logo" class="carousel-logo">
+            </div>
+        </div>
+    </section>
+
+    <!--Contact Section-->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="location-info">
+                <iframe 
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBlPxi686RJ9yfmWHHINfGeZDYvGhd-7Jo&q=111+Modjaji+Street,+Pimville+Zone+1" 
+                    width="100%" 
+                    height="300" 
+                    frameborder="0" 
+                    allowfullscreen 
+                    aria-hidden="false" 
+                    tabindex="0">
+                </iframe>
+                <button id="getLocationBtn" onclick="window.open('https://www.google.com/maps?q=111+Modjaji+Street,+Pimville+Zone+1', '_blank')">Get Location</button>
+            </div>
+            <div class="contact-details">
+                <h2>Contact Us</h2>
+                <p><strong>Address:</strong> 111 Modjaji Street, Pimville Zone 1</p>
+                <p><strong>Phone:</strong> +27 123 456 789</p>
+                <p><strong>Email:</strong> info@pianohub.com</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61566032187990"><img src="assets\facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/pianohubsoweto/?hl=en"><img src="assets\instagram.png" alt="Twitter"></a>
+                    <a href="#"><img src="assets\twitter.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-simple">
+        <p>&copy; 2024 Piano Hub. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+    
+    
+    
     <script src="script.js"></script>
 </body>
 </html>
