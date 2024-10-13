@@ -379,7 +379,7 @@ button:hover {
     }
 
     .about img {
-        padding-left: 100px;
+        padding-left: 99px;
         max-width: 100%;
         margin-bottom: 20px;
     }
@@ -421,12 +421,16 @@ button:hover {
 }
 
 .menu-item {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     text-align: center;
     margin: 0;
 }
 
 .menu-item img {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
     border-radius: 20px;
     width: 250px;
     height: 250px; 
@@ -477,6 +481,8 @@ button:hover {
     }
 
     .menu-item img {
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
         width: 150px; 
         height: 150px;
     }
@@ -485,4 +491,19 @@ button:hover {
         width: 90%;
     }
 }
+
+/* Remove outline for all clickable elements */
+button, img, a {
+    outline: none;
+}
+
+.hamburger, .menu-item img {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:focus {
+    outline: none;
+}
+
 
