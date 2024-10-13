@@ -119,3 +119,21 @@ window.onclick = function(event) {
         beveragesModal.style.display = "none";
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const aboutSection = document.querySelector(".about-section");
+
+    function handleScroll() {
+        const sectionPosition = aboutSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.5;
+
+        // Add 'in-view' class when the section comes into view
+        if (sectionPosition < screenPosition) {
+            aboutSection.classList.add("in-view");
+        }
+    }
+
+    // Listen for scroll events to trigger the animation
+    window.addEventListener("scroll", handleScroll);
+});
+
