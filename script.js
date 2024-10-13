@@ -137,3 +137,63 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("scroll", handleScroll);
 });
 
+document.querySelectorAll('.event-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const info = this.querySelector('.event-info');
+        if (info.style.top === '0px') {
+            info.style.top = '100%';
+            info.style.opacity = '0';
+        } else {
+            info.style.top = '0';
+            info.style.opacity = '1';
+        }
+    });
+});
+
+document.querySelectorAll('.reservation-button').forEach(button => {
+    button.addEventListener('click', function() {
+        // Open reservation modal or link to the reservation page
+        alert('Reservation feature is under construction!'); // Placeholder action
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Add hover zoom effect for event cards
+    const eventCards = document.querySelectorAll('.event-card');
+
+    eventCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.transition = 'transform 0.3s ease-in-out';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var modalEvent = document.getElementById("modal-event");
+    var eventImages = document.querySelectorAll(".event-img");
+    var closeEvent = document.getElementById("close-event");
+    var modalImage = document.getElementById("modal-image");
+
+    eventImages.forEach(function(image) {
+        image.onclick = function() {
+            modalEvent.style.display = "flex"; // Show modal
+            modalImage.src = this.src; // Display clicked image
+        };
+    });
+
+    closeEvent.onclick = function() {
+        modalEvent.style.display = "none"; // Hide modal
+    };
+
+    window.onclick = function(event) {
+        if (event.target === modalEvent) {
+            modalEvent.style.display = "none"; // Hide modal
+        }
+    };
+});
+
